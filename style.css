@@ -6,9 +6,23 @@ body {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   margin: 10px;
 }
+
+#chapterTotalQuesstion{
+  display: none;
+}
+
 #retry{
   color: #f4f4f489;
   background-color: #565869;
+}
+
+#submit{
+  color: #f4f4f489;
+  background-color: #565869;
+  display: none;
+  margin-left: 35%;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 #night{
@@ -249,6 +263,11 @@ main {
   justify-content: flex-start;
   align-self: flex-start;
 }
+#questionstatement{
+  text-transform: capitalize; 
+  width: 100%;
+  letter-spacing: 2px;
+}
 
 /* APPLYING MEDIA QUERIES */
 @media (max-width: 768px) {
@@ -271,6 +290,11 @@ main {
     background-clip: text, border-box;
     mask-image: linear-gradient(to right, #ff6b6b, #007bff);
   }
+  #questionstatement{
+    text-transform: capitalize; 
+    width: 100%;
+    letter-spacing: 1px;
+  }
   .menu {
     display: none;
     position: absolute;
@@ -282,11 +306,13 @@ main {
     z-index: 2;
   }
   #fDesign {
-    font-size: 18px;
+    font-size: 13px;
+    letter-spacing: 2px;
   }
 
   a {
-    font-size: 2em;
+    font-size: 1em;
+    letter-spacing: 2px;
   }
 
   .menu li:hover {
