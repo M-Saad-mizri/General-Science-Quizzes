@@ -16,14 +16,6 @@ function showgs4() {
   closeMenu();
 }
 
-function backToChapters(){
-  if(gs4.style.display === "none" && gs5.style.display === "none"){
-    gs6.style.display === "block"
-    console.log('function working')
-  } else{
-    console.log('function do not working')
-  }
-}
 function showgs5() {
   logo.innerHTML = `<div id="logoId" onclick="location.reload()" class="logo">G. Science Class 5 <span style = "color: white; margin-left: 20px;  padding: 2px 5px; border: 1px solid white; border-radius: 5px; font-size: 20px; cursor: pointer">X</span></div>`;
   var gs5 = document.getElementById("gs5");
