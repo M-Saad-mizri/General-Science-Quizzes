@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>General Science 4th Class</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body id="Bodyy">
+    <nav class="navbar">
+      <!-- LOGO -->
+      <div id="logoId" onclick="location.reload()" class="logo">
+        Science Quiz
+      </div>
+
+      <!-- NAVIGATION MENU -->
+      <ul class="nav-links">
+        <!-- USING CHECKBOX HACK -->
+        <input type="checkbox" id="checkbox_toggle" />
+        <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+
+        <!-- NAVIGATION MENUS -->
+        <div class="menu">
+          <li><a onclick="showgs4()">Quiz Class 4</a></li>
+          <li><a onclick="showgs5()">Quiz Class 5</a></li>
+
+          <li class="services">
+            <a onclick="showgs6()">Quiz Class 6</a>
+          </li>
+          <!-- <li class="nbtn" id="night" ><a onclick="nightmode()">Night Mode</a></li> -->
+        </div>
+      </ul>
+    </nav>
+    <main
+      style="display: flex; align-items: center; flex-direction: column"
+      id="mainn"
+    >
+      <h3 id="ggg" class="gradient-text">Welcome to General Science Quiz</h3>
+      <p
+        style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); padding: 20px"
+        id="mainnn"
+      ></p>
+    </main>
+    <div id="menue">
+      <div style="display: none" id="gs4">
+        <h3>General Science Class: 4</h3>
+        <ol
+          style="
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            overflow-y: auto;
+          "
+        >
+          <li class="sectionChapterNames" id="gs4chp-1">
+            Understanding Ourselves. Part 01
+          </li>
+          <li class="sectionChapterNames" id="gs4chp1part-2">
+            Understanding Ourselves. Part 02
+          </li>
+          <li class="sectionChapterNames" id="gs4chp-2">Ecosystem</li>
+          <li class="sectionChapterNames" id="gs4chp-3">Human Health</li>
+          <li class="sectionChapterNames" id="gs4chp-4">
+            Matter and Its Characteristics
+          </li>
+          <li class="sectionChapterNames" id="gs4chp-5">
+            Forms of Energy and Energy Transfer
+          </li>
+          <li class="sectionChapterNames" id="gs4chp-6">Forces and Machines</li>
+          <li class="sectionChapterNames" id="gs4chp-7">
+            Earth and its Resources
+          </li>
+          <li class="sectionChapterNames" id="gs4chp-8">
+            Earth's Weather and Climate
+          </li>
+          <li class="sectionChapterNames" id="gs4chp-9">
+            Solar System and Our Earth
+          </li>
+          <li class="sectionChapterNames" id="gs4chp-10">
+            Technology in Everyday Life
+          </li>
+          <li class="sectionChapterNames" id="gs4chp-all">
+            GS-Class 4 complete quiz
+          </li>
+        </ol>
+        <p>
+          Complete quiz me 247 questions combined han jo sare 1 sath attempt
+          krna mumkin nai hy. <br />
+          <br />Ap 20, 30 question kr k submit krte rhen, Har bar quiz open krne
+          pr apko random chapters k random questions mlen ge. <br /><br />
+          ap en arrows (&darr;&uarr;) ka use kr k page quickly scroll kr sakte
+          han
+        </p>
+      </div>
+      <div style="display: none" id="gs5">
+        <h3>General Science Class: 5</h3>
+        <ol style="
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        overflow-y: auto;
+      " id="ch5ol">
+          <li id="gs5chp-1" class="sectionChapterNames">
+            Classification of Living Organisms
+          </li>
+          <li class="sectionChapterNames" id="gs5chp-2">Micro Organisms</li>
+          <li class="sectionChapterNames" id="gs5chp-3">Flowers and Seeds</li>
+          <li class="sectionChapterNames" id="gs5chp-4">
+            Environmental Pollution
+          </li>
+          <li class="sectionChapterNames" id="gs5chp-5">
+            Physical and Chemical Changes of Matter
+          </li>
+          <li class="sectionChapterNames" id="gs5chp-6">Light and Sound</li>
+          <li class="sectionChapterNames" id="gs5chp-7">
+            Electricity and Magnetism
+          </li>
+          <li class="sectionChapterNames" id="gs5chp-8">Structure of Earth</li>
+          <li class="sectionChapterNames" id="gs5chp-9">
+            Space and Satellites
+          </li>
+          <li class="sectionChapterNames" id="gs5chp-10">
+            Technology in Everyday Life
+          </li>
+        </ol>
+        <hr />
+      </div>
+      <div style="display: none" id="gs6">
+        <h3>General Science Class: 6</h3>
+        <ol style="
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        overflow-y: auto;
+      ">
+          <li class="sectionChapterNames" id="gs6chp-1">
+            Cellular Organization of Plants and Animals
+          </li>
+          <li class="sectionChapterNames" id="gs6chp-2">Sense Organs</li>
+          <li class="sectionChapterNames" id="gs6chp-3">Flowers and Seeds</li>
+          <li class="sectionChapterNames" id="gs6chp-4">
+            ENVIRONMENT AND INTERACTIONS
+          </li>
+          <li class="sectionChapterNames" id="gs6chp-5">
+            Atom, Molecules, Mixture and Compounds
+          </li>
+          <li class="sectionChapterNames" id="gs6chp-6">Air</li>
+          <li class="sectionChapterNames" id="gs6chp-7">
+            SOLUTIONS AND SUSPENSIONS
+          </li>
+          <li class="sectionChapterNames" id="gs6chp-8">
+            Energy and its Forms
+          </li>
+          <li class="sectionChapterNames" id="gs6chp-9">Forces and Machines</li>
+          <li class="sectionChapterNames" id="gs6chp-10">
+            Properties of Light
+          </li>
+          <li class="sectionChapterNames" id="gs6chp-11">
+            Investigating Sound
+          </li>
+          <li class="sectionChapterNames" id="gs6chp-12">
+            SPACE AND SATELLITES
+          </li>
+        </ol>
+        <hr />
+      </div>
+      <div style="height: 100px"></div>
+      <footer>
+        <span id="fDesign" style="margin-bottom: 5px"
+          >Designed and Developed by &nbsp;</span
+        >
+        <span
+          ><a
+            style="
+              text-decoration: underline;
+              color: rgb(248, 248, 251);
+              padding-bottom: 15px;
+            "
+            href="https://github.com/M-Saad-mizri"
+            >Engr. Muhammad Saad</a
+          ></span
+        >
+      </footer>
+    </div>
+    <button id="goto-submit" onclick="toBottom()">&darr;</button>
+    <button id="goto-top" onclick="scrollToTop()">&uarr;</button>
+    <h4 id="chapterName"></h4>
+    <div id="chapterTotalQuesstionDiv">
+      <h3 id="chapterTotalQuesstion"></h3>
+    </div>
+
+    <div id="quiz"></div>
+    <button
+      style="
+        display: none;
+        margin-left: 35%;
+        background-color: rgb(238, 153, 153);
+        margin-top: 15px;
+        margin-bottom: 15px;
+      "
+      class="btn text-black"
+      id="submit"
+    >
+      Submit
+    </button>
+    <p
+      style="
+        display: none;
+        border-radius: 20px;
+        background-color: rgb(236, 217, 136);
+        color: rgb(9, 2, 2);
+        padding: 2%;
+      "
+      id="score"
+    ></p>
+    <button
+      class="btn text-black"
+      style="
+        display: none;
+        margin-bottom: 20px;
+        background-color: #565869;
+        margin-left: 30%;
+      "
+      id="retry"
+    >
+      Back to Home Screen
+    </button>
+    <!-- <div style = "height: 30px; width: 100%; text-align: center; margin-left: 70px; display: flex;">
+    <!-- complete div for answer button -->
+    <!-- 
+    <button style=" background: transparent; border: none; height: 20px;" class="btn"
+     onclick= "showcurrentanswer(${questionNumber})">See Answer</button>
+
+    <p id="oneans-${questionNumber}" style="display: none; margin: -18px -40px 10px -33px;" 
+    class="oneans-${questionNumber}">${questionData.correct}</p> -->
+
+    <!--</div><hr>-->
+    <script src="code.js"></script>
+  </body>
+</html>
