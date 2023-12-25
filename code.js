@@ -504,8 +504,8 @@ function showResults(currentData) {
   scoreContainer.innerHTML = `<div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;You scored ${score} out of ${
     currentData.length
-  }.<br> <p style = "background-color: #e7b4cd; margin-left: 65px; border-radius: 10px; padding: 4px; width: fit-content;">Skipped Questions:&nbsp;${skippedquestions}</p></div>
-<p style = "margin-left: 95px; margin-bottom: -33px;">&#x2713;</p>
+  }.<br> <p style = " color: #f4f4f489; background-color: #6B4D5C; margin-left: 65px; border-radius: 10px; padding: 4px; width: fit-content;">Skipped Questions:&nbsp;${skippedquestions}</p></div>
+
 <div class="progress-container">
 <div class="progress-bar"><p id="scoreshow" style = "display: none; width: fit-content;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${Math.floor(
     percentage
@@ -515,7 +515,6 @@ function showResults(currentData) {
     Nscorepercentage
   )}%</p></div>
   </div> 
-  <p style = "margin-left: 95px; margin-top: -31px;">&#x2717;</p>
   <p id="storedAverage"></p>
   <button onclick="clearStorage()">Clear Storage</button>
   </div>`;
