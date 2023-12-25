@@ -74,10 +74,6 @@ h3 {
   margin-left: -40px;
   color: #f4f4f489;
 }
-body.night-mode {
-  background-color: black;
-  color: white;
-}
 
 .btn {
   background: transparent;
