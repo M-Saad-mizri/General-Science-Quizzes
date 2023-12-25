@@ -506,9 +506,7 @@ function showResults(currentData) {
 <div class="progress-container">
 <div class="progress-bar"><p id="scoreshow" style = "display: none; color: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${Math.floor(percentage)}%</p></div></div>
 <div class="Nprogress-container">
-  <div class="Nprogress-bar"><p id="Nscoreshow" style = "display: none; width: fit-content;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${Math.floor(
-    Nscorepercentage
-  )}%</p></div>
+  <div class="Nprogress-bar"><p id="Nscoreshow" style = "display: none; color: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${Math.floor(Nscorepercentage)}%</p></div>
   </div> 
   <p id="storedAverage"></p>
   <button class='btn text-black' onclick="clearStorage()">Clear Storage</button>
