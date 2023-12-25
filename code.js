@@ -497,6 +497,7 @@ function showResults(currentData) {
     });
   });
 
+  
   var percentage = (score / currentData.length) * 100;
   var Nscorepercentage = (Nscore / currentData.length) * 100;
   var skippedquestions = currentData.length - (score + Nscore);
@@ -515,7 +516,31 @@ function showResults(currentData) {
   )}%</p></div>
   </div> 
   <p style = "margin-left: 95px; margin-top: -31px;">&#x2717;</p>
+  <p id="storedAverage"></p>
+  <button onclick="clearStorage()">Clear Storage</button>
   </div>`;
+
+
+          let previousScores = JSON.parse(localStorage.getItem('previousScores')) || [];
+          const storedScore = previousScores.length > 0 ? previousScores[previousScores.length - 1] : 0;
+  
+          // Calculate the progress
+          const progress = previousScores.length > 0 ? score - storedScore : 0;
+  
+          previousScores.push(score);
+          localStorage.setItem('previousScores', JSON.stringify(previousScores));
+          displayStoredScore();
+    
+        // Function to display the stored score
+        function displayStoredScore() {
+          const previousScores = JSON.parse(localStorage.getItem('previousScores')) || [];
+          const storedScoreElement = document.getElementById('storedAverage');
+          storedScoreElement.textContent = `Stored Scores: ${previousScores.join(', ') || 'None'}`;
+        }
+        displayStoredScore();
+        
+        // window.resetScore = resetScore;        
+    
 
   submitButton.style.display = "none";
   back_to_home.style.display = "block";

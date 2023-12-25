@@ -235,5 +235,11 @@
     <!--</div><hr>-->
     <script src="data.js"></script>
     <script src="code.js"></script>
+    <script>
+        function clearStorage() {
+    localStorage.removeItem('previousScores');
+    document.getElementById('storedAverage').innerHTML = 'Score Cleared';
+  }
+    </script>
   </body>
 </html>
