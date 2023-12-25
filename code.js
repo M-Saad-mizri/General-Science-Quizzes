@@ -535,7 +535,7 @@ function showResults(currentData) {
         function displayStoredScore() {
           const previousScores = JSON.parse(localStorage.getItem('previousScores')) || [];
           const storedScoreElement = document.getElementById('storedAverage');
-          storedScoreElement.textContent = `Stored Scores: ${previousScores.join(', ') || 'None'}`;
+          storedScoreElement.textContent = `Score History: ${previousScores.join(', ') || 'None'}`;
         }
         displayStoredScore();
         
