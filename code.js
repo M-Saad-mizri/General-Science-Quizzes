@@ -501,15 +501,10 @@ function showResults(currentData) {
   var percentage = (score / currentData.length) * 100;
   var Nscorepercentage = (Nscore / currentData.length) * 100;
   var skippedquestions = currentData.length - (score + Nscore);
-  scoreContainer.innerHTML = `<div><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;You scored ${score} out of ${
-    currentData.length
-  }.<br> <p  class='btn text-black' style = " color: #f4f4f489; background-color: #6B4D5C; margin-left: 65px; border-radius: 10px; padding: 4px; width: fit-content;">Skipped Questions:&nbsp;${skippedquestions}</p></div>
-
+  scoreContainer.innerHTML = `<div>You scored ${score} out of ${currentData.length}.</div>
+  <div>Skipped Questions:&nbsp;${skippedquestions}</div>
 <div class="progress-container">
-<div class="progress-bar"><p id="scoreshow" style = "display: none; width: fit-content;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${Math.floor(
-    percentage
-  )}%</p></div></div>
+<div class="progress-bar"><p id="scoreshow" style = "display: none; color: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${Math.floor(percentage)}%</p></div></div>
 <div class="Nprogress-container">
   <div class="Nprogress-bar"><p id="Nscoreshow" style = "display: none; width: fit-content;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${Math.floor(
     Nscorepercentage
@@ -563,7 +558,7 @@ function showResults(currentData) {
   }
   if (score === 0) {
     document.getElementById("scoreshow").style.display = "block";
-    scoreContainer.innerHTML = `&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unattempted OR Not-Prepared OR <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;you want to see Answer only...!`;
+    scoreContainer.innerHTML = `Unattempted OR Not-Prepared <br> OR <br>you want to see Answer only...!`;
   }
 }
 
