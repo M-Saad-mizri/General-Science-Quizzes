@@ -112,11 +112,11 @@ h3 {
 
 #goto-submit {
   display: none;
-  padding: 10px;
-  border: none;
+  padding: 5px;
   margin-left: 10px;
-  color: #f87f7f;
-  font-size: 30px;
+  color: #ACACBE;
+  font-size: 40px;
+  border: none;
   background: transparent;
   position: fixed;
   top: 400px;
@@ -128,12 +128,12 @@ h3 {
   padding: 10px;
   border: none;
   margin-left: 10px;
-  color: #f87f7f;
-  font-size: 30px;
+  color: #ACACBE;
+  font-size: 40px;
   background: transparent;
   position: fixed;
   top: 350px;
-  right: 20px;
+  right: 15px;
 }
 
 .progress-container {
