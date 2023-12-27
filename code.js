@@ -511,28 +511,21 @@ function showResults(currentData) {
   <p id="storedAverage"></p>
   <button class='btn text-black' onclick="clearStorage()">Clear Storage</button>
   </div>`;
-
-
-          let previousScores = JSON.parse(localStorage.getItem('previousScores')) || [];
-          const storedScore = previousScores.length > 0 ? previousScores[previousScores.length - 1] : 0;
   
-          // Calculate the progress
-          const progress = previousScores.length > 0 ? score - storedScore : 0;
   
-          previousScores.push(score);
-          localStorage.setItem('previousScores', JSON.stringify(previousScores));
-          displayStoredScore();
-    
-        // Function to display the stored score
-        function displayStoredScore() {
-          const previousScores = JSON.parse(localStorage.getItem('previousScores')) || [];
-          const storedScoreElement = document.getElementById('storedAverage');
-          storedScoreElement.textContent = `Score History: ${previousScores.join(', ') || 'None'}`;
-        }
-        displayStoredScore();
-        
-        // window.resetScore = resetScore;        
-    
+  var previousScores = JSON.parse(localStorage.getItem('previousScores')) || [];
+  
+  previousScores.push(score);
+  localStorage.setItem('previousScores', JSON.stringify(previousScores));
+  displayStoredScore();
+  
+  // Function to display the stored score
+  function displayStoredScore() {
+    const previousScores = JSON.parse(localStorage.getItem('previousScores')) || [];
+    const storedScoreElement = document.getElementById('storedAverage');
+    storedScoreElement.textContent = `Score History: ${previousScores.join(', ') || 'None'}`;
+  }
+  displayStoredScore();
 
   submitButton.style.display = "none";
   back_to_home.style.display = "block";
@@ -558,6 +551,22 @@ function showResults(currentData) {
     document.getElementById("scoreshow").style.display = "block";
     scoreContainer.innerHTML = `Unattempted OR Not-Prepared <br> OR <br>you want to see Answer only...!`;
   }
+}
+function viewHistory() {
+  var previousScores = JSON.parse(localStorage.getItem('previousScores')) || [];
+  
+  // Convert the array to a JSON string
+  var scoresString = JSON.stringify(previousScores);
+
+  // Redirect to score.html with scores as a query parameter
+  window.location.href = "score.html?scores=" + encodeURIComponent(scoresString);
+
+  console.log('Working');
+}
+
+function clearStorage() {
+  localStorage.removeItem('previousScores');
+  document.getElementById('storedAverage').innerHTML = 'Score Cleared';
 }
 
 submitButton.addEventListener("click", () => {

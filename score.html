@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="showscoreelement"></p>
+    <script src="data.js"></script>
+    <script src="code.js"></script>
+    <script>
+// score.html
+
+// Retrieve the scores from the URL
+var urlParams = new URLSearchParams(window.location.search);
+var scoresString = urlParams.get('scores');
+
+// Parse the JSON string to get the array of scores
+var previousScores = JSON.parse(decodeURIComponent(scoresString));
+document.getElementById('showscoreelement').innerHTML = "Your Score: " + previousScores;
+ 
+// Now you can use the previousScores array as needed
+  </script>
+</body>
+</html>
