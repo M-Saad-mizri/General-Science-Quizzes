@@ -4,10 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+      .graph-container {
+        font-family: 'Arial', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+  
+      .graph-container {
+        width: 60%;
+        max-width: 600px;
+        padding: 10px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: flex-end;
+        height: 200px; /* Set a fixed height for the graph */
+      }
+  
+      .bar {
+        flex: 1;
+        background-color: #4CAF50; /* Green color */
+        margin: 0 2px;
+      }
+    </style>
 </head>
 <body>
     <p id="showscoreelement"></p>
     <p>Working on it...</p>
+    <div class="graph-container" id="graphContainer">
+      <!-- Graph bars will be added here dynamically -->
+    </div>
     <script src="data.js"></script>
     <script src="code.js"></script>
     <script>
@@ -19,9 +48,27 @@ var scoresString = urlParams.get('scores');
 
 // Parse the JSON string to get the array of scores
 var previousScores = JSON.parse(decodeURIComponent(scoresString));
-document.getElementById('showscoreelement').innerHTML = "Your Score: " + previousScores;
- 
-// Now you can use the previousScores array as needed
+document.getElementById('showscoreelement').innerHTML = "Your Score: " + previousScores; 
+//  previousScores: array data coming from quiz app
+
+// dummy data const successData = [20, 75, 60, 50, 85, 95, 10, 33, 72, 5, 88, 42, 60, 17, 93, 26, 78, 11, 69, 94];
+
+// Function to create bars dynamically
+function createBars(data) {
+  const graphContainer = document.getElementById('graphContainer');
+
+  data.forEach(value => {
+    const bar = document.createElement('div');
+    bar.style.width = '2%';
+    bar.classList.add('bar');
+    bar.style.height = `${value}%`;
+    bar.style.backgroundColor = `rgb(${Math.floor(Math.random() * (23 - 53 + 1)) + 137}, ${Math.floor(Math.random() * (23 - 3 + 1)) + 37}, ${value})`
+    graphContainer.appendChild(bar);
+  });
+}
+
+// createBars(successData);
+createBars(previousScores);
   </script>
 </body>
 </html>
