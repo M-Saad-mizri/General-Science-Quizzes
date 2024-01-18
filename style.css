@@ -111,29 +111,17 @@ h3 {
 }
 
 #goto-submit {
-  display: none;
-  padding: 5px;
-  margin-left: 10px;
-  color: #ACACBE;
-  font-size: 40px;
-  border: none;
-  background: transparent;
   position: fixed;
-  top: 400px;
+  bottom: 20px;
   right: 20px;
+  display: none;
 }
 
 #goto-top {
-  display: none;
-  padding: 10px;
-  border: none;
-  margin-left: 10px;
-  color: #ACACBE;
-  font-size: 40px;
-  background: transparent;
   position: fixed;
-  top: 350px;
-  right: 15px;
+  bottom: 20px;
+  right: 20px;
+  display: none;
 }
 
 .progress-container {

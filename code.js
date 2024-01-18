@@ -104,9 +104,7 @@ var currentData;
 
 function buildQuiz(chapterData) {
   document.getElementById("goto-submit").style.display = "block";
-  document.getElementById("goto-top").style.display = "block";
   document.getElementById("chapterTotalQuesstion").style.display = "block";
-  scrollToTop();
   const output = [];
 
   currentData = chapterData;
@@ -482,16 +480,20 @@ function showResults(currentData) {
           score++;
           answeredCorrectly = true;
           option.parentNode.style.backgroundColor = "rgb(144, 238, 144)"; //true
-          option.parentNode.style.padding = "4px 0";
+          option.parentNode.style.padding = "4px 0 4px 4px";
+          option.parentNode.style.borderRadius = "10px";
           option.parentNode.style.color = "black";
         } else if (answeredCorrectly === false) {
           option.parentNode.style.backgroundColor = "rgb(248, 131, 121)"; //false
-          option.parentNode.style.padding = "4px 0";
+          option.parentNode.style.padding = "4px 0 4px 4px";
+          option.parentNode.style.borderRadius = "10px";
+          option.parentNode.style.color = "black";
           Nscore++;
         }
       } else if (isCorrect) {
         option.parentNode.style.backgroundColor = "rgb(144, 238, 144)"; //true
-        option.parentNode.style.padding = "4px 0";
+        option.parentNode.style.padding = "4px 0 4px 4px";
+        option.parentNode.style.borderRadius = "10px";
         option.parentNode.style.color = "black";
       }
     });
@@ -505,7 +507,7 @@ function showResults(currentData) {
   <div>Skipped Questions:&nbsp;${skippedquestions}</div>
 <div class="progress-container">
 <div class="progress-bar"><p id="scoreshow" style = "display: none; color: black; padding-left: 40%; width: 98%;">${Math.floor(percentage)}%</p></div></div>
-<div class="Nprogress-container">
+<div id="Nprogress-container" class="Nprogress-container">
   <div class="Nprogress-bar"><p id="Nscoreshow" style = "display: none; color: black; padding-left: 40%; width: 98%;">${Math.floor(Nscorepercentage)}%</p></div>
   </div> 
   <p id="storedAverage"></p>
@@ -577,17 +579,27 @@ submitButton.addEventListener("click", () => {
 back_to_home.addEventListener("click", () => {
   location.reload();
 });
+
+let mybutton = document.getElementById("goto-top");
+
+// When the user clicks on the button, scroll to the top of the document
+mybutton.addEventListener("click", backToTop);
+
+function backToTop() {
+  window.scrollTo({
+         top: 0,
+         left: 0,
+         behavior: "smooth",
+        });
+        mybutton.style.display = 'none'
+        document.getElementById("goto-submit").style.display = "block";
+}
 function toBottom() {
   window.scrollTo({
     top: document.body.scrollHeight,
     left: 0,
     behavior: "smooth",
   });
-}
-function scrollToTop() {
-  window.scrollTo({
-    top: 0,
-    left: 0,
-    behavior: "smooth",
-  });
+  mybutton.style.display = 'block'
+  document.getElementById("goto-submit").style.display = "none";
 }
