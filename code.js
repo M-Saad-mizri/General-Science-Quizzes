@@ -51,8 +51,7 @@ Step into the fascinating world of General Science with our interactive quiz! Ge
 
 Let the quest for wisdom and scientific wonders begin! Best of luck, and may your curiosity lead you to new heights of understanding.<br><br>
 
-Happy quizzing!<br>
-<i>Engr. Muhammad Saad</i></>`;
+Happy quizzing!`;
 // window.onload = function () {
 //   // showgs4();
 //   // showgs5();
