@@ -510,8 +510,8 @@ function showResults(currentData) {
   <div class="Nprogress-bar"><p id="Nscoreshow" style = "display: none; color: black; padding-left: 40%; width: 98%;">${Math.floor(Nscorepercentage)}%</p></div>
   </div> 
   <p id="storedAverage"></p>
-  <button class='btn text-black' onclick="clearStorage()">Clear History</button>
-  <button class='btn text-black' onclick="viewHistory()">see progress</button>
+  <button class='btn text-black' onclick="clearStorage()">Clear Score</button>
+  <button class='btn text-black' onclick="viewHistory()">Progress Chart</button>
   </div>`;
   
   

@@ -4,15 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
-    <title>Score</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" 
+  integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" 
+  crossorigin="anonymous">
+    <title>Score Chart</title>
+    <style>
+        body{
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1000%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='rgba(21%2c 67%2c 96%2c 1)'%3e%3c/rect%3e%3cpath d='M0%2c459.703C85.652%2c477.593%2c174.207%2c432.624%2c244.836%2c380.973C313.172%2c330.999%2c345.462%2c250.511%2c386.96%2c176.719C432.456%2c95.817%2c508.573%2c20.557%2c499.466%2c-71.812C490.318%2c-164.598%2c415.275%2c-239.374%2c340.452%2c-295.003C273.955%2c-344.441%2c187.4%2c-344.499%2c106.805%2c-363.746C30.92%2c-381.868%2c-41.772%2c-416.918%2c-118.826%2c-404.685C-201.541%2c-391.553%2c-289.884%2c-361.468%2c-338.242%2c-293.088C-385.786%2c-225.859%2c-369.228%2c-135.185%2c-367.636%2c-52.858C-366.275%2c17.53%2c-362.436%2c88.244%2c-329.664%2c150.552C-297.967%2c210.816%2c-236.552%2c244.221%2c-186.884%2c290.798C-124.369%2c349.423%2c-83.893%2c442.18%2c0%2c459.703' fill='%230e2c3e'%3e%3c/path%3e%3cpath d='M1440 933.621C1507.551 920.751 1556.415 865.9929999999999 1606.089 818.44 1647.66 778.644 1677.347 731.554 1704.23 680.67 1732.725 626.735 1772.738 573.687 1767.505 512.912 1762.19 451.177 1710.307 407.05899999999997 1676.218 355.31600000000003 1636.383 294.849 1616.375 213.69099999999997 1550.531 183.565 1483.35 152.827 1405.438 180.20100000000002 1333.912 198.69799999999998 1260.283 217.73899999999998 1173.739 229.313 1130.829 292.102 1088.208 354.46799999999996 1123.25 438.394 1118.58 513.787 1114.377 581.633 1085.8609999999999 647.8050000000001 1104.749 713.104 1125.151 783.636 1166.22 850.2090000000001 1227.563 890.558 1289.175 931.0840000000001 1367.557 947.423 1440 933.621' fill='%231c5a82'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1000'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+        }
+        .btn {
+  background: transparent;
+  border: none;
+  box-shadow: 1px 2px 5px rgb(70, 69, 69);
+  border-radius: 8px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  padding: 15px;
+  color: white;
+}
+    </style>
 </head>
 <body>
-    <p id="showscoreelement"></p>
-    <p>Working on it...</p>
     <canvas id="myChart"></canvas>
-    <div>
-      <p>Score</p>
-    </div>
+    <div id="scoreLabel" style="margin-top: -20px;">
+        <p style="color: white;"><i>Score</i>
+            <i class="fas fa-arrow-right"></i></p>
+        </div>
+       <div style="display: flex; justify-content: center;">
+        <button class="btn" id="goToIndex">
+            <i class="fas fa-arrow-left"></i>
+            Home</button>
+       </div>
     <script src="data.js"></script>
     <script src="code.js"></script>
     <script>
@@ -21,22 +43,63 @@
 // Retrieve the scores from the URL
 var urlParams = new URLSearchParams(window.location.search);
 var scoresString = urlParams.get('scores');
+const graphElement = document.getElementById('myChart'); // Get a reference to the graph element
+const scoreLabelElement = document.getElementById('scoreLabel');
 
-// // Parse the JSON string to get the array of scores
+
 var scores = JSON.parse(decodeURIComponent(scoresString));
-document.getElementById('showscoreelement').innerHTML = "Your Score: " + scores; 
 //  previousScores: array data coming from quiz app
 
 // const scores = [10, 8, 7, 5, 9,10, 8, 7, 5, 9, 18,19, 34, 45]; // Replace with actual scores
+// Generate progress report
+let progressReport = "";
+
+if (scores.length === 0) {
+  progressReport = "Score History cleared! Keep practicing and aiming for higher scores.";
+  graphElement.style.display = "none";
+  scoreLabelElement.style.display = "none";
+} else {
+  if (scores.length === 1) {
+    progressReport = "Great job on your first attempt! Keep practicing and aiming for higher scores.";
+    graphElement.style.display = "none";
+    scoreLabelElement.style.display = "none";
+  } else {
+    const scoreDiff = scores[scores.length - 1] - scores[scores.length - 2];
+    graphElement.style.display = "block";
+    scoreLabelElement.style.display = "block";
+
+    if (scoreDiff > 0) {
+      progressReport = `Congratulations! You improved by ${scoreDiff} points from your previous score. Keep up the good work!`;
+    } else if (scoreDiff < 0) {
+      progressReport = `Your score decreased by ${scoreDiff} points from your previous score. Let's analyze what went wrong and try to improve next time!`;
+    } else {
+      progressReport = "Your score remained the same as your previous score. Keep practicing and striving for improvement!";
+    }
+  }
+}
+
+
+// Display the progress report
+const progressReportElement = document.createElement('p');
+progressReportElement.style.color = "white"
+progressReportElement.style.textAlign = "center"
+progressReportElement.textContent = progressReport;
+// ... your existing code ...
+
+// Generate progress report (as before)
+// ...
+
+document.body.insertBefore(progressReportElement, graphElement); // Insert before the graph
+
 
 const chartData = {
     labels: scores, // Use scores directly for labels
     datasets: [{
         label: 'Scores',
         data: scores, // Use scores directly for data
-        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+        backgroundColor: 'rgba(255, 99, 132, 0.4)',
         borderColor: 'rgba(255, 99, 132, 1)',
-        borderWidth: 1
+        borderWidth: 0.5
     }]
 };
 
@@ -55,6 +118,10 @@ const myChart = new Chart(ctx, {
             }
         }
     }
+});
+
+document.getElementById("goToIndex").addEventListener("click", function() {
+    window.location.href = "index.html";
 });
 
   </script>
