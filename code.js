@@ -51,7 +51,15 @@ Step into the fascinating world of General Science with our interactive quiz! Ge
 
 Let the quest for wisdom and scientific wonders begin! Best of luck, and may your curiosity lead you to new heights of understanding.<br><br>
 
-Happy quizzing!`;
+Happy quizzing!; <br />
+<div class="dropdown">
+<button class="btn" style="color: yellow; margin-top: 10px; margin-left: -0.2px;" id="openNavbar">Start Quiz</button>
+<div class="dropdown-content">
+  <button class="dropdown-button btn" onclick="showgs4()">Class 4</button>
+  <button class="dropdown-button btn" onclick="showgs5()">Class 5</button>
+  <button class="dropdown-button btn" onclick="showgs6()">Class 6</button>
+</div>
+</div>`
 // window.onload = function () {
 //   // showgs4();
 //   // showgs5();
@@ -407,39 +415,7 @@ gs6chapter12Button.addEventListener("click", () => {
     "Chapter 12: SPACE AND SATELLITES";
   document.getElementById("chapterName").style.display = "block";
 });
-// function nightmode() {
-//   var sectionText = document.querySelectorAll('.section');
 
-//   sectionText.forEach(function(section) {
-//     section.style.backgroundColor = 'black';
-//   });
-//   closeMenu();
-//   var body = document.getElementById("Bodyy");
-//   var nightbutton = document.getElementById("nbtn");
-//   var chapterName = document.getElementById("chapterName");
-//   chapterName.classList.toggle("night-mode");
-//   body.classList.toggle("night-mode");
-
-//   var questions = document.querySelectorAll(".question");
-//   for (var i = 0; i < questions.length; i++) {
-//     questions[i].classList.toggle("night-mode");
-//   }
-//   var sectionText = document.querySelectorAll('.section');
-
-// sectionText.forEach(function(section) {
-//   section.style.backgroundColor = 'black';
-// });
-
-//   var buttons = document.querySelectorAll(".btn");
-//   for (var i = 0; i < buttons.length; i++) {
-//     buttons[i].classList.toggle("night-mode");
-//   }
-//   if (body.classList.contains("night-mode")) {
-//     nightbutton.textContent = "Light Mode ";
-//   } else {
-//     nightbutton.textContent = "Night Mode";
-//   }
-// }
 
 function closeMenu() {
   // mainWelcomeScreen.style.display = 'none'
@@ -448,6 +424,7 @@ function closeMenu() {
     checkbox.checked = false;
   }
 }
+
 function showAllContent() {
   document.getElementById("mainn").style.display = "flex";
 }
@@ -498,6 +475,7 @@ function showResults(currentData) {
     });
   });
 
+  
   
   var percentage = (score / currentData.length) * 100;
   var Nscorepercentage = (Nscore / currentData.length) * 100;
@@ -602,3 +580,10 @@ function toBottom() {
   mybutton.style.display = 'block'
   document.getElementById("goto-submit").style.display = "none";
 }
+
+const dropdown = document.querySelector('.dropdown');
+const dropdownContent = document.querySelector('.dropdown-content');
+
+dropdown.addEventListener('click', () => {
+  dropdownContent.classList.toggle('show');
+});
