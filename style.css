@@ -364,6 +364,7 @@ main {
   .dropdown-content {
     display: none;
     position: absolute;
+    margin-top: 10%;
     background-color: rgba(0, 0, 0, 0.598);
     min-width: 120px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -374,10 +375,11 @@ main {
   }
   
   .dropdown-content button {
-    color: white;
+    color: rgb(22, 21, 21);
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    background-color: #ACACBE;
   }
   
   .dropdown-content button:hover {

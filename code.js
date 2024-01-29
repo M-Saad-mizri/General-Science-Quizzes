@@ -47,19 +47,21 @@ function showgs6() {
 var welcomeNote = document.getElementById("mainnn");
 welcomeNote.innerHTML = `<b class = "welcomeHeading">Welcome, Science Explorers!</b> 🌍✨<br><br>
 
-Step into the fascinating world of General Science with our interactive quiz! Get ready to embark on a journey of curiosity, discovery, and knowledge. Whether you're a seasoned scientist or just starting your exploration, this quiz is designed for you.<br><br>
-
-Let the quest for wisdom and scientific wonders begin! Best of luck, and may your curiosity lead you to new heights of understanding.<br><br>
-
-Happy quizzing!; <br />
+Step into the fascinating world of General Science with our interactive quiz! Get ready to embark on a journey of curiosity, discovery, and knowledge. Whether you're a seasoned scientist or just starting your exploration, this quiz is designed for you.<br>
 <div class="dropdown">
-<button class="btn" style="color: yellow; margin-top: 10px; margin-left: -0.2px;" id="openNavbar">Start Quiz</button>
+  <button class="btn" style="color: yellow; margin-top: 10px; margin-left: -0.2px;" id="openNavbar">Start Quiz</button>
 <div class="dropdown-content">
   <button class="dropdown-button btn" onclick="showgs4()">Class 4</button>
   <button class="dropdown-button btn" onclick="showgs5()">Class 5</button>
   <button class="dropdown-button btn" onclick="showgs6()">Class 6</button>
 </div>
-</div>`
+</div>
+<br />
+<br />
+Let the quest for wisdom and scientific wonders begin! Best of luck, and may your curiosity lead you to new heights of understanding.<br><br>
+
+Happy quizzing!; <br />
+`
 // window.onload = function () {
 //   // showgs4();
 //   // showgs5();
