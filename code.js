@@ -60,7 +60,9 @@ Step into the fascinating world of General Science with our interactive quiz! Ge
 <br />
 Let the quest for wisdom and scientific wonders begin! Best of luck, and may your curiosity lead you to new heights of understanding.<br><br>
 
-Happy quizzing!; <br />
+Happy quizzing!; <br /> <br />
+<a href="https://drive.google.com/drive/u/5/folders/1F0Mf6VOfjuMhEWpBCPeFRD_9B4pP2M-d" style=" text-decoration: underline;" target="_blank">Click to Get Notes</a>
+<br />
 `
 // window.onload = function () {
 //   // showgs4();
